@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RobotAlmi - European Robotics Competition</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/additional-styles.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="animated-header">
+        <img src="img/logo.png" alt="Futuristic Logo of RobotAlmi" class="logo-animation">
+        
+        <!-- Navegación móvil simplificada -->
+        <div class="mobile-nav-container">
+            <div class="mobile-nav-links">
+                <a href="#introduction">Introduction</a>
+                <a href="#our-challenge">Our Challenge</a>
+                <a href="#wifi-security">WIFI Network</a>
+                <a href="#arduino-app">Arduino</a>
+                <a href="#web-server">Web</a>
+                <a href="#multimedia">Multimedia</a>
+                <a href="#english-content">English</a>
+                <a href="#employability">Employability</a>
+                <a href="#our-team">Team</a>
+                <a href="#contact">Contact</a>
+                <div class="mobile-language-selector">
+                    <a href="index.html" class="language-btn">ES</a>
+                    <a href="index-eu.html" class="language-btn">EU</a>
+                    <a href="index-en.html" class="language-btn active">EN</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navegación original (se mantendrá para pantallas grandes) -->
+        <div class="nav-container">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <!-- Language selector -->
+                    <li class="dropdown">
+                        <a href="#">Language <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="index.html">Spanish</a>
+                            <a href="index-eu.html">Basque</a>
+                            <a href="index-en.html">English</a>
+                        </div>
+                    </li>
+                    
+                    <!-- Main categories -->
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#our-challenge">Our Challenge</a></li>
+                    
+                    <!-- Dropdown for WIFI -->
+                    <li class="dropdown">
+                        <a href="#wifi-security">WIFI Network <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#wifi-configuration">Configuration</a>
+                            <a href="#network-diagram">Network Diagram</a>
+                            <a href="#wifi-security">Security</a>
+                        </div>
+                    </li>
+                    
+                    <!-- Dropdown for Arduino -->
+                    <li class="dropdown">
+                        <a href="#arduino-app">Arduino <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#arduino-programming">Programming</a>
+                            <a href="#app-inventor">App Inventor</a>
+                            <a href="#extra-features">Extra Features</a>
+                        </div>
+                    </li>
+                    
+                    <!-- Dropdown for Web Server -->
+                    <li class="dropdown">
+                        <a href="#web-server">Web <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#server-installation">Installation</a>
+                            <a href="#web-design">Web Design</a>
+                            <a href="#hosting">Hosting</a>
+                        </div>
+                    </li>
+                    
+                    <!-- Other sections -->
+                    <li><a href="#multimedia">Multimedia</a></li>
+                    <li><a href="#english-content">English</a></li>
+                    <li><a href="#employability">Employability</a></li>
+                    <li><a href="#our-team">Team</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Mobile language buttons -->
+        <div class="language-selector">
+            <button class="language-btn" onclick="location.href='index.html'">ES</button>
+            <button class="language-btn" onclick="location.href='index-eu.html'">EU</button>
+            <button class="language-btn active" onclick="location.href='index-en.html'">EN</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Introduction -->
+        <section id="introduction" class="fade-in-section">
+            <h1 class="text-border slide-down-title">Our Participation in the European Robotics Competition</h1>
+            <p class="text-box fade-in-text">
+                As students at ALMI Studies Center, we participated in the European robotics competition by developing innovative robots and applying our technical and transversal competencies.
+            </p>
+            <h3>Photo of our stand:</h3>
+            <img src="img/introduccion.png" class="foto">
+        </section>
+
+        <!-- Our Challenge -->
+        <section id="our-challenge" class="fade-in-section">
+            <h2 class="text-border slide-down-title">Our Challenge</h2>
+            <p class="text-box fade-in-text">
+                The IT and technology services company RobotAlmi decided to participate in a European robotics competition to expand its scope and seek new clients. This competition has two categories:
+            </p>
+            <ul>
+                <h1 class="text-border textorobots">Robot Fights (OTTO)</h1>
+                <img src="img/otto.gif" class="OTTO">
+                <h1 class="text-border textorobots">Race (Spider)</h1>
+                <img src="img/araña.png" class="arana">
+            </ul>
+            <p class="text-box fade-in-text">
+                To ensure the security of wireless connections during the competition, each participating group must create its own secure subnet.
+            </p>
+        </section>
+
+        <!-- WIFI NETWORK AND SECURITY -->
+        <section id="wifi-security" class="fade-in-section section-wifi">
+            <h2 class="text-border slide-down-title">🔐 WIFI Network and Security </h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('config-wifi')">Configuration</button>
+                <button class="tab-button" onclick="openTab('esquema-wifi')">Diagram</button>
+                <button class="tab-button" onclick="openTab('backup-wifi')">Backups</button>
+                <button class="tab-button" onclick="openTab('raid-wifi')">RAID</button>
+                <button class="tab-button" onclick="openTab('portal-wifi')">Captive Portal</button>
+                <button class="tab-button" onclick="openTab('auditoria-wifi')">Audit</button>
+            </div>
+            
+            <div id="config-wifi" class="tab-content active">
+                <h3>WIFI Network Configuration</h3>
+                <p class="fade-in-text">
+                    We configured our WIFI network using the WPA2 standard to ensure maximum security. We implemented MAC address filtering to control which devices can connect to our network, and assigned fixed IPs to all critical devices.
+                </p>
+                <div class="code-block">
+                    <code>
+                        # Router Configuration<br>
+                        SSID: ReviRouter<br>
+                        Security: WPA2-PSK (AES)<br>
+                        Password: ********<br>
+                        MAC Filtering: Enabled<br>
+                        DHCP: 192.168.1.100 - 192.168.1.150<br>
+                        Fixed IPs: 192.168.1.2 - 192.168.1.10
+                    </code>
+                </div>
+                <a href="#" class="action-button">View Complete Details</a>
+            </div>
+            
+            <div id="esquema-wifi" class="tab-content">
+                <h3>Network Diagram</h3>
+                <p class="fade-in-text">
+                    We designed a detailed diagram of our network showing the topology, connected devices, and implemented security measures.
+                </p>
+                <div class="network-diagram">
+                    <img src="img/wifi.png" alt="WIFI Network Diagram" class="wifi">
+                </div>
+                <p>
+                    The diagram shows the connection between the main router, control devices (computers and tablets), and robots. Each connection is protected using WPA2 and MAC filtering.
+                </p>
+            </div>
+            
+            <div id="backup-wifi" class="tab-content">
+                <h3>Cloud Backups</h3>
+                <p class="fade-in-text">
+                    We implemented a cloud backup system using different services and accounts with secure passwords to protect all project information.
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Google Drive</h4>
+                        <p>Storage of documentation and design files</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>GitHub</h4>
+                        <p>Source code version control</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Dropbox</h4>
+                        <p>Secondary backup of critical files</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="raid-wifi" class="tab-content">
+                <h3>RAID System</h3>
+                <p class="fade-in-text">
+                    We installed and configured a RAID 1 (mirror) system to ensure data redundancy on our local server.
+                </p>
+                <div class="code-block">
+                    <code>
+                        # RAID 1 Configuration<br>
+                        sudo mdadm --create --verbose /dev/md0 --level=1 --raid-devices=2 /dev/sda1 /dev/sdb1<br>
+                        sudo mkfs.ext4 /dev/md0<br>
+                        sudo mount /dev/md0 /mnt/raid1<br>
+                        # Verification<br>
+                        cat /proc/mdstat
+                    </code>
+                </div>
+            </div>
+            
+            <div id="portal-wifi" class="tab-content">
+                <h3>Captive Portal</h3>
+                <p class="fade-in-text">
+                    We implemented a captive portal to control access to our WIFI network, requiring authentication for all users attempting to connect.
+                </p>
+                <p>
+                    We used PfSense with the CaptivePortal package to create a custom login page with the RobotAlmi logo.
+                </p>
+                <a href="#" class="action-button">View Configuration</a>
+            </div>
+            
+            <div id="auditoria-wifi" class="tab-content">
+                <h3>WIFI Audit and Security</h3>
+                <p class="fade-in-text">
+                    We conducted a comprehensive audit of our WIFI network using specialized tools to detect potential vulnerabilities.
+                </p>
+                <p>
+                    We used Wireshark to analyze network traffic, Aircrack-ng to test the security of the WPA2 password, and Nmap to scan ports and services.
+                </p>
+                <p>
+                    The results confirmed that our network is completely secure against the most common attacks.
+                </p>
+            </div>
+        </section>
+
+        <!-- ARDUINO PROGRAMMING AND APP INVENTOR -->
+        <section id="arduino-app" class="fade-in-section section-arduino">
+            <h2 class="text-border slide-down-title">🤖 Arduino Programming and App Inventor </h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('prog-arduino')">Arduino</button>
+                <button class="tab-button" onclick="openTab('app-inventor')">App Inventor</button>
+                <button class="tab-button" onclick="openTab('funcionalidades')">Extra Features</button>
+                <button class="tab-button" onclick="openTab('codigo-innovador')">Innovative Code</button>
+                <button class="tab-button" onclick="openTab('pruebas-robots')">Testing</button>
+            </div>
+            
+            <div id="prog-arduino" class="tab-content active">
+                <h3>Arduino Programming</h3>
+                <p class="fade-in-text">
+                    We developed functional Arduino programs to control our OTTO and Spider robots, implementing different movement modes and sensor responses.
+                </p>
+                <div class="code-block">
+                    <code>
+                        // Code for OTTO Robot<br>
+                        #include &lt;Servo.h&gt;<br><br>
+                        
+                        // Pin definitions<br>
+                        #define RIGHT_SERVO_PIN 2<br>
+                        #define LEFT_SERVO_PIN 3<br>
+                        #define ULTRASONIC_TRIG_PIN 4<br>
+                        #define ULTRASONIC_ECHO_PIN 5<br><br>
+                        
+                        Servo rightServo;<br>
+                        Servo leftServo;<br><br>
+                        
+                        void setup() {<br>
+                        &nbsp;&nbsp;rightServo.attach(RIGHT_SERVO_PIN);<br>
+                        &nbsp;&nbsp;leftServo.attach(LEFT_SERVO_PIN);<br>
+                        &nbsp;&nbsp;pinMode(ULTRASONIC_TRIG_PIN, OUTPUT);<br>
+                        &nbsp;&nbsp;pinMode(ULTRASONIC_ECHO_PIN, INPUT);<br>
+                        }<br><br>
+                        
+                        void loop() {<br>
+                        &nbsp;&nbsp;// Main code<br>
+                        }
+                    </code>
+                </div>
+                <a href="#" class="action-button">View Complete Code</a>
+            </div>
+            
+            <div id="app-inventor" class="tab-content">
+                <h3>App Inventor</h3>
+                <p class="fade-in-text">
+                    We created mobile applications with App Inventor to remotely control our robots via Bluetooth, with intuitive and well-designed interfaces.
+                </p>
+                <div class="project-cards">
+                    <div class="project-card">
+                        <img src="img/otto.gif" alt="OTTO Control App">
+                        <div class="project-card-content">
+                            <h3>OTTO Control</h3>
+                            <p>Application to control the OTTO robot's movements using directional buttons and predefined modes.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="img/araña.png" alt="Spider Control App">
+                        <div class="project-card-content">
+                            <h3>Spider Control</h3>
+                            <p>Application with virtual joystick to precisely control the spider during the race.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="funcionalidades" class="tab-content">
+                <h3>Extra Features</h3>
+                <p class="fade-in-text">
+                    We implemented additional features in our robots that go beyond the basic requirements of the competition.
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Obstacle Detection</h4>
+                        <p>Ultrasonic sensors to avoid collisions</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Line Following</h4>
+                        <p>IR sensors to follow a marked path</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Voice Control</h4>
+                        <p>Integration with voice assistants through the app</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Battle Modes</h4>
+                        <p>Different programmed strategies for combat</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="codigo-innovador" class="tab-content">
+                <h3>Innovative Code</h3>
+                <p class="fade-in-text">
+                    We used advanced programming techniques not covered in class to improve the performance and capabilities of our robots.
+                </p>
+                <div class="code-block">
+                    <code>
+                        // PID implementation for movement control<br>
+                        float Kp = 2.0;<br>
+                        float Ki = 0.5;<br>
+                        float Kd = 1.0;<br>
+                        float error = 0;<br>
+                        float lastError = 0;<br>
+                        float integral = 0;<br><br>
+                        
+                        float calculatePID(float setpoint, float input) {<br>
+                        &nbsp;&nbsp;error = setpoint - input;<br>
+                        &nbsp;&nbsp;integral += error;<br>
+                        &nbsp;&nbsp;float derivative = error - lastError;<br>
+                        &nbsp;&nbsp;float output = Kp * error + Ki * integral + Kd * derivative;<br>
+                        &nbsp;&nbsp;lastError = error;<br>
+                        &nbsp;&nbsp;return output;<br>
+                        }
+                    </code>
+                </div>
+            </div>
+            
+            <div id="pruebas-robots" class="tab-content">
+                <h3>Robot Testing</h3>
+                <p class="fade-in-text">
+                    We conducted numerous tests with our robots to ensure their proper functioning in the competitions.
+                </p>
+                <p>
+                    The tests included combat simulations for the OTTO robot and track runs for the spider, adjusting the programming based on the results obtained.
+                </p>
+                <p>
+                    Both robots demonstrated excellent performance during the competition, participating correctly in their respective categories.
+                </p>
+            </div>
+        </section>
+
+        <!-- WEB SERVER AND WEBSITE CREATION -->
+        <section id="web-server" class="fade-in-section section-web">
+            <h2 class="text-border slide-down-title">🌐 Web Server and Website Creation </h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('instalacion-web')">Installation</button>
+                <button class="tab-button" onclick="openTab('creacion-web')">Website Creation</button>
+                <button class="tab-button" onclick="openTab('animaciones-web')">Animations</button>
+                <button class="tab-button" onclick="openTab('traduccion-web')">Translation</button>
+                <button class="tab-button" onclick="openTab('alojamiento-web')">Hosting</button>
+                <button class="tab-button" onclick="openTab('responsive-web')">Responsive</button>
+            </div>
+            
+            <div id="instalacion-web" class="tab-content active">
+                <h3>Web Server Installation on Linux</h3>
+                <p class="fade-in-text">
+                    We installed and configured an Apache web server on an Ubuntu Linux distribution to host our project website.
+                </p>
+                <div class="code-block">
+                    <code>
+                        # Apache Installation<br>
+                        sudo apt update<br>
+                        sudo apt install apache2<br><br>
+                        
+                        # Permission Configuration<br>
+                        sudo chown -R $USER:$USER /var/www/html<br><br>
+                        
+                        # Module Enabling<br>
+                        sudo a2enmod rewrite<br>
+                        sudo systemctl restart apache2
+                    </code>
+                </div>
+            </div>
+            
+            <div id="creacion-web" class="tab-content">
+                <h3>Website Creation</h3>
+                <p class="fade-in-text">
+                    We designed and developed this website to document our project, using HTML5, CSS3, and JavaScript to create an interactive experience.
+                </p>
+                <p>
+                    The website includes sections for each aspect of the project, image galleries, demonstration videos, and technical documentation.
+                </p>
+                <p>
+                    All content was developed by our team, minimizing the use of templates or automatic generators.
+                </p>
+            </div>
+            
+            <div id="animaciones-web" class="tab-content">
+                <h3>Animations and Transitions</h3>
+                <p class="fade-in-text">
+                    We implemented various animations and transitions to make the website more attractive and dynamic:
+                </p>
+                <ul class="list-animation">
+                    <li>Entry animations for titles and texts</li>
+                    <li>Hover effects on images and buttons</li>
+                    <li>Smooth transitions between sections</li>
+                    <li>Animations on team cards</li>
+                    <li>Parallax effects in some sections</li>
+                </ul>
+            </div>
+            
+            <div id="traduccion-web" class="tab-content">
+                <h3>Multilingual Translation</h3>
+                <p class="fade-in-text">
+                    We translated the entire website into three languages: Spanish, Basque, and English, allowing visitors to access all information in their preferred language.
+                </p>
+                <p>
+                    Each version maintains the same design and functionality, but with content culturally adapted to each language.
+                </p>
+                <div class="language-selector" style="margin-top: 20px;">
+                    <button class="language-btn">Spanish</button>
+                    <button class="language-btn">Basque</button>
+                    <button class="language-btn active">English</button>
+                </div>
+            </div>
+            
+            <div id="alojamiento-web" class="tab-content">
+                <h3>Local and External Hosting</h3>
+                <p class="fade-in-text">
+                    We hosted our website both on a local server (for demonstrations during the competition) and on an external server for public access.
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Local Server</h4>
+                        <p>Apache on Ubuntu 22.04 LTS</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>External Server</h4>
+                        <p>Hosting on GitHub Pages</p>
+                    </div>
+                </div>
+                <a href="#" class="action-button">Visit External Website</a>
+            </div>
+            
+            <div id="responsive-web" class="tab-content">
+                <h3>Responsive Design</h3>
+                <p class="fade-in-text">
+                    We ensured that the website is fully responsive, adapting to different devices and screen sizes:
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Mobile</h4>
+                        <p>Optimized design for small screens</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Tablets</h4>
+                        <p>Adaptation for medium screens</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Laptops</h4>
+                        <p>Optimal display on standard screens</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>TVs</h4>
+                        <p>Support for large screens</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MULTIMEDIA CONTENT -->
+        <section id="multimedia" class="fade-in-section section-multimedia">
+            <h2 class="text-border slide-down-title">🎥 Multimedia Content </h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('video-multimedia')">Video</button>
+                <button class="tab-button" onclick="openTab('carteleria-multimedia')">Posters</button>
+                <button class="tab-button" onclick="openTab('marca-multimedia')">Brand Image</button>
+                <button class="tab-button" onclick="openTab('valor-multimedia')">Social Value</button>
+                <button class="tab-button" onclick="openTab('rrss-multimedia')">Social Media</button>
+            </div>
+            
+            <div id="video-multimedia" class="tab-content active">
+                <h3>Professional Video</h3>
+                <p class="fade-in-text">
+                    We created a professional promotional video with animations and voiceover that showcases our project and participation in the competition.
+                </p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div id="carteleria-multimedia" class="tab-content">
+                <h3>Posters and Advertisements</h3>
+                <p class="fade-in-text">
+                    We designed attractive and innovative posters and advertisements to promote our project and participation in the competition.
+                </p>
+                <div class="project-cards">
+                    <div class="project-card">
+                        <img src="img/introduccion.png" alt="Poster 1">
+                        <div class="project-card-content">
+                            <h3>Main Poster</h3>
+                            <p>Used at the event entrance</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="img/wifi.png" alt="Poster 2">
+                        <div class="project-card-content">
+                            <h3>Technical Infographic</h3>
+                            <p>Visual explanation of our project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="marca-multimedia" class="tab-content">
+                <h3>Brand Image</h3>
+                <p class="fade-in-text">
+                    We created a unique brand image for RobotAlmi, with a distinctive logo, consistent color palette, and recognizable visual style.
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Logo</h4>
+                        <img src="img/logo.png" alt="RobotAlmi Logo" style="width: 100px; margin: 10px auto;">
+                    </div>
+                    <div class="competency-item">
+                        <h4>Color Palette</h4>
+                        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+                            <div style="width: 30px; height: 30px; background-color: #007BFF; border-radius: 5px;"></div>
+                            <div style="width: 30px; height: 30px; background-color: #004DFF; border-radius: 5px;"></div>
+                            <div style="width: 30px; height: 30px; background-color: #ff4c4c; border-radius: 5px;"></div>
+                            <div style="width: 30px; height: 30px; background-color: #121212; border-radius: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Typography</h4>
+                        <p style="font-family: Arial, sans-serif;">Arial (Main)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="valor-multimedia" class="tab-content">
+                <h3>Social Value Promotion</h3>
+                <p class="fade-in-text">
+                    We included the promotion of the social value of the project in our content, highlighting how robotics can contribute to society.
+                </p>
+                <p>
+                    Our promotional materials emphasize the importance of accessible technology, STEM education, and solving real problems through robotics.
+                </p>
+            </div>
+            
+            <div id="rrss-multimedia" class="tab-content">
+                <h3>Social Media</h3>
+                <p class="fade-in-text">
+                    We created and maintained active accounts on social media related to the project, regularly posting progress and updates.
+                </p>
+                <div class="social-icons" style="font-size: 2rem; margin: 20px 0;">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p>
+                    We regularly published content during the development phases of the project, sharing progress, tests, and final results.
+                </p>
+            </div>
+        </section>
+
+        <!-- ENGLISH CONTENT -->
+        <section id="english-content" class="fade-in-section section-english">
+            <h2 class="text-border slide-down-title">🇬🇧 English Content </h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('video-english')">Video</button>
+                <button class="tab-button" onclick="openTab('web-english')">Web</button>
+                <button class="tab-button" onclick="openTab('grammar-english')">Grammar</button>
+                <button class="tab-button" onclick="openTab('presentation-english')">Presentation</button>
+            </div>
+            
+            <div id="video-english" class="tab-content active">
+                <h3>English Video</h3>
+                <p class="fade-in-text">
+                    We created an English version of our promotional video, with narration and subtitles carefully reviewed to avoid grammatical or vocabulary errors.
+                </p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/your-english-video-id" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div id="web-english" class="tab-content">
+                <h3>English Web Content</h3>
+                <p class="fade-in-text">
+                    Our website includes a complete English version, with all content professionally translated and error-free.
+                </p>
+                <p>
+                    The English version maintains the same structure and design as the Spanish version, but with culturally adapted content.
+                </p>
+                <a href="index-en.html" class="action-button">View English Version</a>
+            </div>
+            
+            <div id="grammar-english" class="tab-content">
+                <h3>Advanced Grammatical Structures</h3>
+                <p class="fade-in-text">
+                    In our English content, we used advanced grammatical structures and rich vocabulary to demonstrate our mastery of the language.
+                </p>
+                <div class="code-block">
+                    <code>
+                        "Having developed our robots using cutting-edge technology, we were able to demonstrate their capabilities during the European competition."<br><br>
+                        
+                        "Not only did our team create innovative solutions, but we also implemented security measures that exceeded the competition requirements."<br><br>
+                        
+                        "Had we not focused on thorough testing, we might have encountered unexpected issues during the critical phases of the competition."
+                    </code>
+                </div>
+            </div>
+            
+            <div id="presentation-english" class="tab-content">
+                <h3>English Presentation</h3>
+                <p class="fade-in-text">
+                    Several members of our team delivered part of the project presentation in English, demonstrating fluency and mastery of technical vocabulary.
+                </p>
+                <p>
+                    We prepared a bilingual presentation that allowed us to switch naturally between Spanish and English, adapting to the international audience of the competition.
+                </p>
+            </div>
+        </section>
+
+        <!-- EMPLOYABILITY -->
+        <section id="employability" class="fade-in-section section-empleabilidad">
+            <h2 class="text-border slide-down-title">🛠️ Employability </h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('agentes-sst')">OSH Agents</button>
+                <button class="tab-button" onclick="openTab('funciones-sst')">Functions</button>
+                <button class="tab-button" onclick="openTab('alternativas-eficientes')">Efficient Alternatives</button>
+                <button class="tab-button" onclick="openTab('alternativas-ecologicas')">Sustainability</button>
+            </div>
+            
+            <div id="agentes-sst" class="tab-content active">
+                <h3>Occupational Safety and Health (OSH) Agents</h3>
+                <p class="fade-in-text">
+                    We correctly identified the Occupational Safety and Health agents relevant to our project:
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Employer</h4>
+                        <p>Main responsible for ensuring safety and health</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Workers</h4>
+                        <p>Must follow established prevention measures</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Prevention Delegates</h4>
+                        <p>Workers' representatives in prevention matters</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Safety and Health Committee</h4>
+                        <p>Joint consultation and participation body</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="funciones-sst" class="tab-content">
+                <h3>OSH and ORP Functions</h3>
+                <p class="fade-in-text">
+                    We adequately explained the functions of Occupational Safety and Health and Occupational Risk Prevention agents:
+                </p>
+                <ul class="list-animation">
+                    <li><strong>Employer:</strong> Ensure workers' safety and health, assess risks, plan preventive activity, provide equipment and training.</li>
+                    <li><strong>Workers:</strong> Correctly use equipment, report risk situations, cooperate with the employer in preventive matters.</li>
+                    <li><strong>Prevention Delegates:</strong> Collaborate with management, promote improvements, be consulted by the employer, monitor compliance with regulations.</li>
+                    <li><strong>Safety and Health Committee:</strong> Participate in the development of prevention plans, promote initiatives on risk prevention methods.</li>
+                    <li><strong>Prevention Services:</strong> Advise and assist the employer, workers, and representatives in preventive matters.</li>
+                </ul>
+            </div>
+            
+            <div id="alternativas-eficientes" class="tab-content">
+                <h3>Efficient Alternatives</h3>
+                <p class="fade-in-text">
+                    We proposed new efficient alternatives to improve the project:
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Code Optimization</h4>
+                        <p>Reduction of energy consumption through more efficient algorithms</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>3D Printing</h4>
+                        <p>Design of custom parts to reduce weight and improve performance</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>LiPo Batteries</h4>
+                        <p>Longer duration and shorter charging time</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Wireless Communication</h4>
+                        <p>Low-consumption protocols for remote control</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="alternativas-ecologicas" class="tab-content">
+                <h3>Ecological and Sustainable Alternatives</h3>
+                <p class="fade-in-text">
+                    We included ecological and sustainable alternatives in our project:
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Recycled Materials</h4>
+                        <p>Use of recycled plastics for some parts</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Solar Energy</h4>
+                        <p>Solar panels to charge batteries during demonstrations</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Waste Reduction</h4>
+                        <p>Modular design to facilitate repairs and upgrades</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Digital Documentation</h4>
+                        <p>Minimization of paper use through online documentation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Competencies -->
+        <section id="technical-competencies" class="fade-in-section">
+            <h2 class="slide-down-title">Technical Competencies Developed</h2>
+            <p class="fade-in-text">
+                Throughout the project, we developed key technical competencies in various areas:
+            </p>
+            <div class="competencies-grid">
+                <div class="competency-item">
+                    <h3>Computer Security</h3>
+                    <p>We managed storage devices and applied techniques to ensure information integrity.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Assembly and Maintenance</h3>
+                    <p>We selected and assembled computer components, interpreting blueprints and manufacturer instructions.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Operating Systems</h3>
+                    <p>We installed and configured operating systems, optimizing their performance according to hardware and software needs.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Local Networks</h3>
+                    <p>We deployed and maintained local networks applying assembly techniques and solving problems.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Technical English</h3>
+                    <p>We interpreted and created written documents related to the sector, such as technical manuals and order forms.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transversal Competencies -->
+        <section id="transversal-competencies" class="fade-in-section">
+            <h2 class="slide-down-title">Transversal Competencies Developed</h2>
+            <p class="fade-in-text">
+                In addition to technical competencies, we worked on key transversal competencies:
+            </p>
+            <div class="competencies-grid">
+                <div class="competency-item">
+                    <h3>Initiative</h3>
+                    <p>We made proactive decisions to solve problems and improve the project.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Involvement</h3>
+                    <p>We actively involved ourselves in all stages of project development.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Teamwork</h3>
+                    <p>We collaborated efficiently in teams of 3 people, distributing tasks and solving problems together.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Oral and Written Communication</h3>
+                    <p>We documented our work and created multilingual content (web, video, images) in Spanish, Basque, and English.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team -->
+        <section id="our-team" class="fade-in-section">
+            <h2 class="slide-down-title">Our Team</h2>
+            <p class="fade-in-text">
+                Our team consists of 3 members who worked collaboratively to achieve the project objectives. Each member contributed with their unique skills and expertise.
+            </p>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="img/jon.jpg" class="Miembro">
+                    <h3>Jon Revillas</h3>
+                   
+                </div>
+                <div class="team-member">
+                    <img src="img/petcu.jpg" class="Miembro">
+                    <h3>Alberto Florin Petcu</h3>
+              
+                </div>
+                <div class="team-member">
+                    <img src="img/oier.jpg" class="Miembro">
+                    <h3>Oier González</h3>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Videos -->
+        <section id="videos" class="fade-in-section">
+            <h2 class="slide-down-title">Videos</h2>
+            <p class="fade-in-text">
+                Watch our promotional video showcasing our robots' functionality and our participation in the competition.
+            </p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Results Achieved -->
+        <section id="results" class="fade-in-section">
+            <h2 class="slide-down-title">Results Achieved</h2>
+            <p class="fade-in-text">
+                Thanks to our effort and dedication, we achieved:
+            </p>
+            <ul class="list-animation">
+                <li>Creating a secure WIFI network that prevented intrusions during the competition.</li>
+                <li>Developing functional and competitive robots in their respective categories.</li>
+                <li>Producing a promotional video subtitled in English and a multilingual website.</li>
+                <li>Promoting our participation on social media and creating a solid business brand.</li>
+            </ul>
+        </section>
+
+        <!-- Final Reflection -->
+        <section id="reflection" class="fade-in-section">
+            <h2 class="slide-down-title">Final Reflection</h2>
+            <p class="fade-in-text">
+                This project was an enriching experience that allowed us to apply our knowledge in robotics, networks, computer security, and job skills. We also learned the importance of teamwork, effective communication, and complex project management.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="fade-in-footer">
+        <div class="footer-links">
+            <a href="#introduction">Home</a>
+            <a href="#wifi-security">WIFI Network</a>
+            <a href="#arduino-app">Arduino</a>
+            <a href="#web-server">Web</a>
+            <a href="#multimedia">Multimedia</a>
+            <a href="#english-content">English</a>
+            <a href="#employability">Employability</a>
+        </div>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        
+        <p>&copy; 2025 ALMI Education Center. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Loader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.loader').style.display = 'none';
+            }, 1000);
+        });
+        
+        // Mobile menu
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+        
+        // Tabs
+        function openTab(tabId) {
+            // Hide all tab contents
+            var tabContents = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            // Deactivate all tab buttons
+            var tabButtons = document.getElementsByClassName('tab-button');
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            // Show selected content
+            var selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+            
+            // Activate selected button
+            var clickedButton = event.currentTarget;
+            clickedButton.classList.add('active');
+        }
+        
+        // Back to top button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                document.getElementById('backToTop').classList.add('visible');
+            } else {
+                document.getElementById('backToTop').classList.remove('visible');
+            }
+        };
+        
+        document.getElementById('backToTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Mobile dropdown
+        var dropdowns = document.getElementsByClassName('dropdown');
+        for (var i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    this.classList.toggle('active');
+                    e.preventDefault();
+                }
+            });
+        }
+    </script>
+</body>
+</html>

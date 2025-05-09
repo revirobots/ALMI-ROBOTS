@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RobotAlmi - Concurso Europeo de Robótica</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/additional-styles.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- Botón para volver arriba -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- Elementos adicionales para nuevas funcionalidades -->
+    
+    <!-- Modo oscuro -->
+    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+        <i class="fas fa-moon" id="darkModeIcon"></i>
+    </div>
+    
+    <!-- Barra de búsqueda eliminada por solicitud del usuario -->
+    
+    <!-- Lightbox para imágenes -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightboxImg" src="">
+    </div>
+    
+    <!-- Contenedor de notificaciones -->
+    <div id="notificationsContainer"></div>
+    
+    <!-- Botones de accesibilidad -->
+    <div class="accessibility-toolbar">
+        <button class="accessibility-button" onclick="changeFontSize('increase')" title="Aumentar tamaño de texto">
+            <i class="fas fa-plus"></i>
+        </button>
+        <button class="accessibility-button" onclick="changeFontSize('decrease')" title="Disminuir tamaño de texto">
+            <i class="fas fa-minus"></i>
+        </button>
+        <button class="accessibility-button" onclick="changeFontSize('reset')" title="Restablecer tamaño de texto">
+            <i class="fas fa-font"></i>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="animated-header">
+        <img src="img/logo.png" alt="Logo Futurista de RobotAlmi" class="logo-animation">
+        
+        <!-- Navegación móvil simplificada -->
+        <div class="mobile-nav-container">
+            <div class="mobile-nav-links">
+                <a href="#introduccion">Introducción</a>
+                <a href="#nuestro-reto">Nuestro Reto</a>
+                <a href="#wifi-seguridad">Red WIFI</a>
+                <a href="#arduino-app">Arduino</a>
+                <a href="#servidor-web">Web</a>
+                <a href="#multimedia">Multimedia</a>
+                <a href="#contenido-ingles">Inglés</a>
+                <a href="#empleabilidad">Empleabilidad</a>
+                <a href="#nuestro-equipo">Equipo</a>
+                <a href="#contacto">Contacto</a>
+                <div class="mobile-language-selector">
+                    <a href="index.html" class="language-btn active">ES</a>
+                    <a href="index-eu.html" class="language-btn">EU</a>
+                    <a href="index-en.html" class="language-btn">EN</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navegación original (se mantendrá para pantallas grandes) -->
+        <div class="nav-container">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <!-- Selector de idioma -->
+                    <li class="dropdown">
+                        <a href="#">Idioma <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="index.html">Español</a>
+                            <a href="index-eu.html">Euskera</a>
+                            <a href="index-en.html">Inglés</a>
+                        </div>
+                    </li>
+                    
+                    <!-- Categorías principales -->
+                    <li><a href="#introduccion">Introducción</a></li>
+                    <li><a href="#nuestro-reto">Nuestro Reto</a></li>
+                    
+                    <!-- Dropdown para WIFI -->
+                    <li class="dropdown">
+                        <a href="#wifi-seguridad">Red WIFI <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#configuracion-wifi">Configuración</a>
+                            <a href="#esquema-wifi">Esquema</a>
+                            <a href="#seguridad-wifi">Seguridad</a>
+                        </div>
+                    </li>
+                    
+                    <!-- Dropdown para Arduino -->
+                    <li class="dropdown">
+                        <a href="#arduino-app">Arduino <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#programacion-arduino">Programación</a>
+                            <a href="#app-inventor">App Inventor</a>
+                            <a href="#funcionalidades-extra">Funcionalidades Extra</a>
+                        </div>
+                    </li>
+                    
+                    <!-- Dropdown para Servidor Web -->
+                    <li class="dropdown">
+                        <a href="#servidor-web">Web <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#instalacion-servidor">Instalación</a>
+                            <a href="#diseno-web">Diseño Web</a>
+                            <a href="#alojamiento">Alojamiento</a>
+                        </div>
+                    </li>
+                    
+                    <!-- Otras secciones -->
+                    <li><a href="#multimedia">Multimedia</a></li>
+                    <li><a href="#contenido-ingles">Inglés</a></li>
+                    <li><a href="#empleabilidad">Empleabilidad</a></li>
+                    <li><a href="#nuestro-equipo">Equipo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Botones de idioma para móvil -->
+        <div class="language-selector">
+            <button class="language-btn active" onclick="location.href='index.html'">ES</button>
+            <button class="language-btn" onclick="location.href='index-eu.html'">EU</button>
+            <button class="language-btn" onclick="location.href='index-en.html'">EN</button>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        <!-- Introducción -->
+        <section id="introduccion" class="fade-in-section">
+            <h1 class="text-border slide-down-title">Nuestra Participación en el Concurso Europeo de Robótica</h1>
+            <p class="text-box fade-in-text">
+                Como alumnos del Centro de Estudios ALMI, participamos en el concurso europeo de robótica desarrollando robots innovadores y aplicando nuestras competencias técnicas y transversales.
+            </p>
+            <h3>Foto de nuestro stand:</h3>
+            <img src="img/introduccion.png" class="foto clickable-image" onclick="openLightbox(this.src)">
+        </section>
+
+        <!-- Nuestro Reto -->
+        <section id="nuestro-reto" class="fade-in-section">
+            <h2 class="text-border slide-down-title">Nuestro Reto</h2>
+            <p class="text-box fade-in-text">
+                La empresa de servicios informáticos y tecnológicos ReviRobots ha decidido participar en un concurso europeo de robótica para ampliar su ámbito de actuación y buscar nuevos clientes. Este concurso tiene dos categorías:
+            </p>
+            <ul>
+                <h1 class="text-border textorobots">Combates de Robots (OTTO)</h1>
+                <img src="img/otto.gif" class="OTTO clickable-image" onclick="openLightbox(this.src)">
+                <h1 class="text-border textorobots">Carrera (Araña)</h1>
+                <img src="img/araña.png" class="arana clickable-image" onclick="openLightbox(this.src)">
+            </ul>
+            <p class="text-box fade-in-text">
+                Para garantizar la seguridad de las conexiones inalámbricas durante el concurso, cada grupo participante debe crear su propia subred segura.
+            </p>
+        </section>
+
+        <!-- RED WIFI Y SEGURIDAD -->
+        <section id="wifi-seguridad" class="fade-in-section section-wifi">
+            <h2 class="text-border slide-down-title">🔐 Red WIFI y Seguridad </h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('config-wifi')">Configuración</button>
+                <button class="tab-button" onclick="openTab('esquema-wifi')">Esquema</button>
+                <button class="tab-button" onclick="openTab('backup-wifi')">Copias de Seguridad</button>
+                <button class="tab-button" onclick="openTab('raid-wifi')">RAID</button>
+                <button class="tab-button" onclick="openTab('portal-wifi')">Portal Cautivo</button>
+                <button class="tab-button" onclick="openTab('auditoria-wifi')">Auditoría</button>
+            </div>
+            
+            <div id="config-wifi" class="tab-content active">
+                <h3>Configuración de la Red WIFI</h3>
+                <p class="fade-in-text">
+                    Configuramos nuestra red WIFI utilizando el estándar WPA2 para garantizar la máxima seguridad. Implementamos filtrado por dirección MAC para controlar qué dispositivos pueden conectarse a nuestra red, y asignamos IPs fijas a todos los dispositivos críticos.
+                </p>
+                <div class="code-block">
+                    <code>
+                        # Configuración del Router<br>
+                        SSID: ReviRouter<br>
+                        Seguridad: WPA2-PSK (AES)<br>
+                        Contraseña: ********<br>
+                        Filtrado MAC: Activado<br>
+                        DHCP: 192.168.1.100 - 192.168.1.150<br>
+                        IPs Fijas: 192.168.1.2 - 192.168.1.10
+                    </code>
+                </div>
+                <a href="#" class="action-button">Ver Detalles Completos</a>
+            </div>
+            
+            <div id="esquema-wifi" class="tab-content">
+                <h3>Esquema Explicativo de la Red</h3>
+                <p class="fade-in-text">
+                    Diseñamos un esquema detallado de nuestra red que muestra la topología, los dispositivos conectados y las medidas de seguridad implementadas.
+                </p>
+                <div class="network-diagram">
+                    <img src="img/wifi.png" alt="Esquema de Red WIFI" class="wifi clickable-image" onclick="openLightbox(this.src)">
+                </div>
+                <p>
+                    El esquema muestra la conexión entre el router principal, los dispositivos de control (ordenadores y tablets) y los robots. Cada conexión está protegida mediante WPA2 y filtrado MAC.
+                </p>
+            </div>
+            
+            <div id="backup-wifi" class="tab-content">
+                <h3>Copias de Seguridad en la Nube</h3>
+                <p class="fade-in-text">
+                    Implementamos un sistema de copias de seguridad en la nube utilizando diferentes servicios y cuentas con contraseñas seguras para proteger toda la información del proyecto.
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Google Drive</h4>
+                        <p>Almacenamiento de documentación y archivos de diseño</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>GitHub</h4>
+                        <p>Control de versiones del código fuente</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Dropbox</h4>
+                        <p>Backup secundario de archivos críticos</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="raid-wifi" class="tab-content">
+                <h3>Sistema RAID</h3>
+                <p class="fade-in-text">
+                    Instalamos y configuramos un sistema RAID 1 (espejo) para garantizar la redundancia de datos en nuestro servidor local.
+                </p>
+                <div class="code-block">
+                    <code>
+                        # Configuración de RAID 1<br>
+                        sudo mdadm --create --verbose /dev/md0 --level=1 --raid-devices=2 /dev/sda1 /dev/sdb1<br>
+                        sudo mkfs.ext4 /dev/md0<br>
+                        sudo mount /dev/md0 /mnt/raid1<br>
+                        # Verificación<br>
+                        cat /proc/mdstat
+                    </code>
+                </div>
+            </div>
+            
+            <div id="portal-wifi" class="tab-content">
+                <h3>Portal Cautivo</h3>
+                <p class="fade-in-text">
+                    Implementamos un portal cautivo para controlar el acceso a nuestra red WIFI, requiriendo autenticación para todos los usuarios que intenten conectarse.
+                </p>
+                <p>
+                    Utilizamos PfSense con el paquete CaptivePortal para crear una página de inicio de sesión personalizada con el logo de RobotAlmi.
+                </p>
+                <a href="#" class="action-button">Ver Configuración</a>
+            </div>
+            
+            <div id="auditoria-wifi" class="tab-content">
+                <h3>Auditoría WIFI y Seguridad</h3>
+                <p class="fade-in-text">
+                    Realizamos una auditoría completa de nuestra red WIFI utilizando herramientas especializadas para detectar posibles vulnerabilidades.
+                </p>
+                <p>
+                    Utilizamos Wireshark para analizar el tráfico de red, Aircrack-ng para probar la seguridad de la contraseña WPA2, y Nmap para escanear puertos y servicios.
+                </p>
+                <p>
+                    Los resultados confirmaron que nuestra red es completamente segura frente a los ataques más comunes.
+                </p>
+            </div>
+        </section>
+
+        <!-- PROGRAMACIÓN ARDUINO Y APP INVENTOR -->
+        <section id="arduino-app" class="fade-in-section section-arduino">
+            <h2 class="text-border slide-down-title">🤖 Programación Arduino y App Inventor </h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('prog-arduino')">Arduino</button>
+                <button class="tab-button" onclick="openTab('app-inventor')">App Inventor</button>
+                <button class="tab-button" onclick="openTab('pruebas-robots')">Pruebas</button>
+            </div>
+            
+            <div id="prog-arduino" class="tab-content active">
+                <h3>Programación Arduino</h3>
+                <p class="fade-in-text">
+                    Desarrollamos programas funcionales en Arduino para controlar nuestros robots OTTO y Araña, implementando diferentes modos de movimiento y respuestas a sensores.
+                </p>
+                <div class="code-block">
+                    <code>
+                        // Código para Robot OTTO<br>
+                        #include &lt;Servo.h&gt;<br><br>
+                        
+                        // Definición de pines<br>
+                        #define PIN_SERVO_DERECHO 2<br>
+                        #define PIN_SERVO_IZQUIERDO 3<br>
+                        #define PIN_ULTRASONICO_TRIG 4<br>
+                        #define PIN_ULTRASONICO_ECHO 5<br><br>
+                        
+                        Servo servoDerecho;<br>
+                        Servo servoIzquierdo;<br><br>
+                        
+                        void setup() {<br>
+                        &nbsp;&nbsp;servoDerecho.attach(PIN_SERVO_DERECHO);<br>
+                        &nbsp;&nbsp;servoIzquierdo.attach(PIN_SERVO_IZQUIERDO);<br>
+                        &nbsp;&nbsp;pinMode(PIN_ULTRASONICO_TRIG, OUTPUT);<br>
+                        &nbsp;&nbsp;pinMode(PIN_ULTRASONICO_ECHO, INPUT);<br>
+                        }<br><br>
+                        
+                        void loop() {<br>
+                        &nbsp;&nbsp;// Código principal<br>
+                        }
+                    </code>
+                </div>
+                <a href="#" class="action-button">Ver Código Completo</a>
+            </div>
+            
+            <div id="app-inventor" class="tab-content">
+                <h3>App Inventor</h3>
+                <p class="fade-in-text">
+                    Creamos aplicaciones móviles con App Inventor para controlar remotamente nuestros robots mediante Bluetooth, con interfaces intuitivas y bien diseñadas.
+                </p>
+                <div class="project-cards">
+                    <div class="project-card">
+                        <img src="img/otto.gif" alt="App Control OTTO" class="clickable-image" onclick="openLightbox(this.src)">
+                        <div class="project-card-content">
+                            <h3>Control OTTO</h3>
+                            <p>Aplicación para controlar los movimientos del robot OTTO mediante botones direccionales y modos predefinidos.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="img/araña.png" alt="App Control Araña" class="clickable-image" onclick="openLightbox(this.src)">
+                        <div class="project-card-content">
+                            <h3>Control Araña</h3>
+                            <p>Aplicación con joystick virtual para controlar con precisión la araña durante la carrera.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="funcionalidades" class="tab-content">
+                <h3>Funcionalidades Extra</h3>
+                <p class="fade-in-text">
+                    Implementamos funcionalidades adicionales en nuestros robots que van más allá de los requisitos básicos del concurso.
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Detección de Obstáculos</h4>
+                        <p>Sensores ultrasónicos para evitar colisiones</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Seguimiento de Línea</h4>
+                        <p>Sensores IR para seguir un camino marcado</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Control por Voz</h4>
+                        <p>Integración con asistentes de voz a través de la app</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Modos de Combate</h4>
+                        <p>Diferentes estrategias programadas para el combate</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="codigo-innovador" class="tab-content">
+                <h3>Código Innovador</h3>
+                <p class="fade-in-text">
+                    Utilizamos técnicas de programación avanzadas no vistas en clase para mejorar el rendimiento y las capacidades de nuestros robots.
+                </p>
+                <div class="code-block">
+                    <code>
+                        // Implementación PID para control de movimiento<br>
+                        float Kp = 2.0;<br>
+                        float Ki = 0.5;<br>
+                        float Kd = 1.0;<br>
+                        float error = 0;<br>
+                        float lastError = 0;<br>
+                        float integral = 0;<br><br>
+                        
+                        float calcularPID(float setpoint, float input) {<br>
+                        &nbsp;&nbsp;error = setpoint - input;<br>
+                        &nbsp;&nbsp;integral += error;<br>
+                        &nbsp;&nbsp;float derivative = error - lastError;<br>
+                        &nbsp;&nbsp;float output = Kp * error + Ki * integral + Kd * derivative;<br>
+                        &nbsp;&nbsp;lastError = error;<br>
+                        &nbsp;&nbsp;return output;<br>
+                        }
+                    </code>
+                </div>
+            </div>
+            
+            <div id="pruebas-robots" class="tab-content">
+                <h3>Pruebas con Robots</h3>
+                <p class="fade-in-text">
+                    Realizamos numerosas pruebas con nuestros robots para asegurar su correcto funcionamiento en las competiciones.
+                </p>
+                <p>
+                    Las pruebas incluyeron simulaciones de combate para el robot OTTO y recorridos de pista para la araña, ajustando la programación en función de los resultados obtenidos.
+                </p>
+                <p>
+                    Ambos robots demostraron un excelente rendimiento durante el concurso, participando correctamente en sus respectivas categorías.
+                </p>
+            </div>
+        </section>
+
+        <!-- SERVIDOR WEB Y CREACIÓN DE LA WEB -->
+        <section id="servidor-web" class="fade-in-section section-web">
+            <h2 class="text-border slide-down-title">🌐 Servidor Web y Creación de la Web </h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('instalacion-web')">Instalación</button>
+                <button class="tab-button" onclick="openTab('creacion-web')">Creación Web</button>
+                <button class="tab-button" onclick="openTab('animaciones-web')">Animaciones</button>
+                <button class="tab-button" onclick="openTab('traduccion-web')">Traducción</button>
+                <button class="tab-button" onclick="openTab('alojamiento-web')">Alojamiento</button>
+                <button class="tab-button" onclick="openTab('responsive-web')">Responsive</button>
+            </div>
+            
+            <div id="instalacion-web" class="tab-content active">
+                <h3>Instalación de Servidor Web en Linux</h3>
+                <p class="fade-in-text">
+                    Instalamos y configuramos un servidor web Apache en una distribución Linux Ubuntu para alojar nuestra web del proyecto.
+                </p>
+                <div class="code-block">
+                    <code>
+                        # Instalación de Apache<br>
+                        sudo apt update<br>
+                        sudo apt install apache2<br><br>
+                        
+                        # Configuración de permisos<br>
+                        sudo chown -R $USER:$USER /var/www/html<br><br>
+                        
+                        # Habilitación de módulos<br>
+                        sudo a2enmod rewrite<br>
+                        sudo systemctl restart apache2
+                    </code>
+                </div>
+            </div>
+            
+            <div id="creacion-web" class="tab-content">
+                <h3>Creación de la Web</h3>
+                <p class="fade-in-text">
+                    Diseñamos y desarrollamos esta web para documentar nuestro proyecto, utilizando HTML5, CSS3 y JavaScript para crear una experiencia interactiva.
+                </p>
+                <p>
+                    La web incluye secciones para cada aspecto del proyecto, galerías de imágenes, vídeos demostrativos y documentación técnica.
+                </p>
+                <p>
+                    Todo el contenido fue desarrollado por nuestro equipo, minimizando el uso de plantillas o generadores automáticos.
+                </p>
+            </div>
+            
+            <div id="animaciones-web" class="tab-content">
+                <h3>Animaciones y Transiciones</h3>
+                <p class="fade-in-text">
+                    Implementamos diversas animaciones y transiciones para hacer la web más atractiva y dinámica:
+                </p>
+                <ul class="list-animation">
+                    <li>Animaciones de entrada para títulos y textos</li>
+                    <li>Efectos hover en imágenes y botones</li>
+                    <li>Transiciones suaves entre secciones</li>
+                    <li>Animaciones en las tarjetas de equipo</li>
+                    <li>Efectos parallax en algunas secciones</li>
+                </ul>
+            </div>
+            
+            <div id="traduccion-web" class="tab-content">
+                <h3>Traducción Multilingüe</h3>
+                <p class="fade-in-text">
+                    Tradujimos toda la web a tres idiomas: español, euskera e inglés, permitiendo a los visitantes acceder a toda la información en su idioma preferido.
+                </p>
+                <p>
+                    Cada versión mantiene el mismo diseño y funcionalidad, pero con contenido culturalmente adaptado a cada idioma.
+                </p>
+                <div class="language-selector" style="margin-top: 20px;">
+                    <button class="language-btn active">Español</button>
+                    <button class="language-btn">Euskera</button>
+                    <button class="language-btn">Inglés</button>
+                </div>
+            </div>
+            
+            <div id="alojamiento-web" class="tab-content">
+                <h3>Alojamiento Local y Externo</h3>
+                <p class="fade-in-text">
+                    Alojamos nuestra web tanto en un servidor local (para demostraciones durante el concurso) como en un servidor externo para acceso público.
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Servidor Local</h4>
+                        <p>Apache en Ubuntu 22.04 LTS</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Servidor Externo</h4>
+                        <p>Alojamiento en AWS</p>
+                    </div>
+                </div>
+                <a href="#" class="action-button">Visitar Web Externa</a>
+            </div>
+            
+            <div id="responsive-web" class="tab-content">
+                <h3>Diseño Responsive</h3>
+                <p class="fade-in-text">
+                    Nos aseguramos de que la web sea completamente responsive, adaptándose a diferentes dispositivos y tamaños de pantalla:
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Móviles</h4>
+                        <p>Diseño optimizado para pantallas pequeñas</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Tablets</h4>
+                        <p>Adaptación para pantallas medianas</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Portátiles</h4>
+                        <p>Visualización óptima en pantallas estándar</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>TVs</h4>
+                        <p>Soporte para pantallas grandes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENIDO MULTIMEDIA -->
+        <section id="multimedia" class="fade-in-section section-multimedia">
+            <h2 class="text-border slide-down-title">🎥 Contenido Multimedia </h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('video-multimedia')">Vídeo</button>
+                <button class="tab-button" onclick="openTab('carteleria-multimedia')">Cartelería</button>
+                <button class="tab-button" onclick="openTab('marca-multimedia')">Imagen de Marca</button>
+                <button class="tab-button" onclick="openTab('valor-multimedia')">Valor Social</button>
+                <button class="tab-button" onclick="openTab('rrss-multimedia')">Redes Sociales</button>
+            </div>
+            
+            <div id="video-multimedia" class="tab-content active">
+                <h3>Vídeo Profesional</h3>
+                <p class="fade-in-text">
+                    Creamos un vídeo promocional profesional con animaciones y voz en off que muestra nuestro proyecto y participación en el concurso. https://youtu.be/eZXccHuW8-k
+                </p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/eZXccHuW8-k" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div id="carteleria-multimedia" class="tab-content">
+                <h3>Cartelería y Anuncios</h3>
+                <p class="fade-in-text">
+                    Diseñamos carteles y anuncios atractivos e innovadores para promocionar nuestro proyecto y participación en el concurso. 
+                </p>
+                <div class="project-cards">
+                    <div class="project-card">
+                        <img src="img/introduccion.png" alt="Cartel 1" class="clickable-image" onclick="openLightbox(this.src)">
+                        <div class="project-card-content">
+                            <h3>Cartel Principal</h3>
+                            <p>Utilizado en la entrada del evento</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="img/wifi.png" alt="Cartel 2" class="clickable-image" onclick="openLightbox(this.src)">
+                        <div class="project-card-content">
+                            <h3>Infografía Técnica</h3>
+                            <p>Explicación visual de nuestro proyecto</p>
+                        </div>
+                    </div>
+                       <div class="project-card">
+                        <img src="img/cartelarana.png" alt="Cartel 3" class="clickable-image" onclick="openLightbox(this.src)">
+                        <div class="project-card-content">
+                            <h3>Robot araña</h3>
+                            <p>Cartel promocional de robot Araña</p>
+                        </div>
+                       </div>
+                       <div class="project-card">
+                        <img src="img/cartelrobot.png" alt="Cartel 4" class="clickable-image" onclick="openLightbox(this.src)">
+                        <div class="project-card-content">
+                            <h3>Robot otto</h3>
+                            <p>Captura dinámica de nuestros robots OTTO y Araña en pleno funcionamiento durante las pruebas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="marca-multimedia" class="tab-content">
+                <h3>Imagen de Marca</h3>
+                <p class="fade-in-text">
+                    Creamos una imagen de marca única para RobotAlmi, con un logo distintivo, paleta de colores coherente y estilo visual reconocible.
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Logo</h4>
+                        <img src="img/logo.png" alt="Logo RobotAlmi" style="width: 100px; margin: 10px auto;" class="clickable-image" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="competency-item">
+                        <h4>Paleta de Colores</h4>
+                        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+                            <div style="width: 30px; height: 30px; background-color: #007BFF; border-radius: 5px;"></div>
+                            <div style="width: 30px; height: 30px; background-color: #004DFF; border-radius: 5px;"></div>
+                            <div style="width: 30px; height: 30px; background-color: #ff4c4c; border-radius: 5px;"></div>
+                            <div style="width: 30px; height: 30px; background-color: #121212; border-radius: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Tipografía</h4>
+                        <p style="font-family: Arial, sans-serif;">Arial (Principal)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="valor-multimedia" class="tab-content">
+                <h3>Promoción del Valor Social</h3>
+                <p class="fade-in-text">
+                    Incluimos en nuestros contenidos la promoción del valor social del proyecto, destacando cómo la robótica puede contribuir a la sociedad.
+                </p>
+                <p>
+                    Nuestros materiales promocionales enfatizan la importancia de la tecnología accesible, la educación STEM y la resolución de problemas reales mediante la robótica.
+                </p>
+            </div>
+            
+            <div id="rrss-multimedia" class="tab-content">
+                <h3>Redes Sociales</h3>
+                <p class="fade-in-text">
+                    Creamos y mantuvimos cuentas activas en redes sociales relacionadas con el proyecto, publicando regularmente avances y actualizaciones.
+                </p>
+                <div class="social-icons" style="font-size: 2rem; margin: 20px 0;">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p>
+                    Publicamos contenido regularmente durante las fases de desarrollo del proyecto, compartiendo avances, pruebas y resultados finales.
+                </p>
+            </div>
+        </section>
+
+        <!-- CONTENIDOS EN INGLÉS -->
+        <section id="contenido-ingles" class="fade-in-section section-english">
+            <h2 class="text-border slide-down-title">🇬🇧 Contenidos en Inglés </h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('video-english')">Vídeo</button>
+                <button class="tab-button" onclick="openTab('web-english')">Web</button>
+                <button class="tab-button" onclick="openTab('grammar-english')">Gramática</button>
+                <button class="tab-button" onclick="openTab('presentation-english')">Exposición</button>
+            </div>
+            
+            <div id="video-english" class="tab-content active">
+                <h3>Vídeo en Inglés</h3>
+                <p class="fade-in-text">
+                    Creamos una versión en inglés de nuestro vídeo promocional, con narración y subtítulos cuidadosamente revisados para evitar errores gramaticales o de vocabulario.
+                </p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/eZXccHuW8-k"  frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div id="web-english" class="tab-content">
+                <h3>Contenido Web en Inglés</h3>
+                <p class="fade-in-text">
+                    Nuestra web incluye una versión completa en inglés, con todo el contenido traducido profesionalmente y sin errores.
+                </p>
+                <p>
+                    La versión en inglés mantiene la misma estructura y diseño que la versión en español, pero con contenido culturalmente adaptado.
+                </p>
+                <a href="index-en.html" class="action-button">Ver Versión en Inglés</a>
+            </div>
+            
+            <div id="grammar-english" class="tab-content">
+                <h3>Estructuras Gramaticales Avanzadas</h3>
+                <p class="fade-in-text">
+                    En nuestros contenidos en inglés, utilizamos estructuras gramaticales avanzadas y vocabulario rico para demostrar nuestro dominio del idioma.
+                </p>
+                <div class="code-block">
+                    <code>
+                        "Having developed our robots using cutting-edge technology, we were able to demonstrate their capabilities during the European competition."<br><br>
+                        
+                        "Not only did our team create innovative solutions, but we also implemented security measures that exceeded the competition requirements."<br><br>
+                        
+                        "Had we not focused on thorough testing, we might have encountered unexpected issues during the critical phases of the competition."
+                    </code>
+                </div>
+            </div>
+            
+            <div id="presentation-english" class="tab-content">
+                <h3>Exposición en Inglés</h3>
+                <p class="fade-in-text">
+                    Varios miembros de nuestro equipo realizaron parte de la exposición del proyecto en inglés, demostrando fluidez y dominio del vocabulario técnico.
+                </p>
+                <p>
+                    Preparamos una presentación bilingüe que nos permitió alternar de forma natural entre español e inglés, adaptándonos al público internacional del concurso.
+                </p>
+            </div>
+        </section>
+
+        <!-- EMPLEABILIDAD -->
+        <section id="empleabilidad" class="fade-in-section section-empleabilidad">
+            <h2 class="text-border slide-down-title">🛠️ Empleabilidad </h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('agentes-sst')">Agentes SST</button>
+                <button class="tab-button" onclick="openTab('funciones-sst')">Funciones</button>
+                <button class="tab-button" onclick="openTab('alternativas-eficientes')">Alternativas Eficientes</button>
+                <button class="tab-button" onclick="openTab('alternativas-ecologicas')">Sostenibilidad</button>
+            </div>
+            
+            <div id="agentes-sst" class="tab-content active">
+                <h3>Agentes de Seguridad y Salud en el Trabajo (SST)</h3>
+                <p class="fade-in-text">
+                    Identificamos correctamente los agentes de Seguridad y Salud en el Trabajo relevantes para nuestro proyecto:
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Empresario</h4>
+                        <p>Principal responsable de garantizar la seguridad y salud</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Trabajadores</h4>
+                        <p>Deben seguir las medidas de prevención establecidas</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Delegados de Prevención</h4>
+                        <p>Representantes de los trabajadores en materia de prevención</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Comité de Seguridad y Salud</h4>
+                        <p>Órgano paritario de consulta y participación</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="funciones-sst" class="tab-content">
+                <h3>Funciones de SST y PRL</h3>
+                <p class="fade-in-text">
+                    Explicamos de manera adecuada las funciones de los agentes de Seguridad y Salud en el Trabajo y Prevención de Riesgos Laborales:
+                </p>
+                <ul class="list-animation">
+                    <li><strong>Empresario:</strong> Garantizar la seguridad y salud de los trabajadores, evaluar riesgos, planificar la actividad preventiva, proporcionar equipos y formación.</li>
+                    <li><strong>Trabajadores:</strong> Utilizar correctamente los equipos, informar de situaciones de riesgo, cooperar con el empresario en materia preventiva.</li>
+                    <li><strong>Delegados de Prevención:</strong> Colaborar con la dirección, promover mejoras, ser consultados por el empresario, vigilar el cumplimiento de la normativa.</li>
+                    <li><strong>Comité de Seguridad y Salud:</strong> Participar en la elaboración de planes de prevención, promover iniciativas sobre métodos de prevención de riesgos.</li>
+                    <li><strong>Servicios de Prevención:</strong> Asesorar y asistir al empresario, trabajadores y representantes en materia preventiva.</li>
+                </ul>
+            </div>
+            
+            <div id="alternativas-eficientes" class="tab-content">
+                <h3>Alternativas Eficientes</h3>
+                <p class="fade-in-text">
+                    Propusimos nuevas alternativas eficientes para mejorar el proyecto:
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Optimización de Código</h4>
+                        <p>Reducción del consumo energético mediante algoritmos más eficientes</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Impresión 3D</h4>
+                        <p>Diseño de piezas personalizadas para reducir peso y mejorar rendimiento</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Baterías LiPo</h4>
+                        <p>Mayor duración y menor tiempo de carga</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Comunicación Inalámbrica</h4>
+                        <p>Protocolos de bajo consumo para control remoto</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="alternativas-ecologicas" class="tab-content">
+                <h3>Alternativas Ecológicas y Sostenibles</h3>
+                <p class="fade-in-text">
+                    Incluimos alternativas ecológicas y sostenibles en nuestro proyecto:
+                </p>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <h4>Materiales Reciclados</h4>
+                        <p>Uso de plásticos reciclados para algunas piezas</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Energía Solar</h4>
+                        <p>Paneles solares para cargar baterías durante demostraciones</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Reducción de Residuos</h4>
+                        <p>Diseño modular para facilitar reparaciones y actualizaciones</p>
+                    </div>
+                    <div class="competency-item">
+                        <h4>Documentación Digital</h4>
+                        <p>Minimización del uso de papel mediante documentación online</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competencias Técnicas -->
+        <section id="competencias-tecnicas" class="fade-in-section">
+            <h2 class="slide-down-title">Competencias Técnicas Desarrolladas</h2>
+            <p class="fade-in-text">
+                A lo largo del proyecto, desarrollamos competencias técnicas clave en diversas áreas:
+            </p>
+            <div class="competencies-grid">
+                <div class="competency-item">
+                    <h3>Seguridad Informática</h3>
+                    <p>Gestionamos dispositivos de almacenamiento y aplicamos técnicas para garantizar la integridad de la información.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Montaje y Mantenimiento</h3>
+                    <p>Seleccionamos y montamos componentes informáticos, interpretando planos e instrucciones del fabricante.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Sistemas Operativos</h3>
+                    <p>Instalamos y configuramos sistemas operativos, optimizando su rendimiento según las necesidades de hardware y software.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Redes Locales</h3>
+                    <p>Desplegamos y mantenemos redes locales aplicando técnicas de montaje y resolviendo problemas.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Inglés Técnico</h3>
+                    <p>Interpretamos y elaboramos documentos escritos relacionados con el sector, como manuales técnicos y hojas de pedido.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competencias Transversales -->
+        <section id="competencias-transversales" class="fade-in-section">
+            <h2 class="slide-down-title">Competencias Transversales Desarrolladas</h2>
+            <p class="fade-in-text">
+                Además de las competencias técnicas, trabajamos en competencias transversales clave:
+            </p>
+            <div class="competencies-grid">
+                <div class="competency-item">
+                    <h3>Iniciativa</h3>
+                    <p>Tomamos decisiones proactivas para resolver problemas y mejorar el proyecto.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Implicación</h3>
+                    <p>Nos involucramos activamente en todas las fases de desarrollo del proyecto.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Trabajo en Equipo</h3>
+                    <p>Colaboramos eficientemente en equipos de 3 personas, distribuyendo tareas y resolviendo problemas juntos.</p>
+                </div>
+                <div class="competency-item">
+                    <h3>Comunicación Oral y Escrita</h3>
+                    <p>Documentamos nuestro trabajo y creamos contenido multilingüe (web, vídeo, imágenes) en español, euskera e inglés.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nuestro Equipo -->
+        <section id="nuestro-equipo" class="fade-in-section">
+            <h2 class="slide-down-title">Nuestro Equipo</h2>
+            <p class="fade-in-text">
+                Nuestro equipo está formado por 3 miembros que trabajaron colaborativamente para lograr los objetivos del proyecto. Cada miembro aportó sus habilidades y experiencia únicas.
+            </p>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="img/jon.jpg" class="Miembro clickable-image" onclick="openLightbox(this.src)">
+                    <h3>Jon Revillas</h3>
+                    
+                </div>
+                <div class="team-member">
+                    <img src="img/petcu.jpg" class="Miembro clickable-image" onclick="openLightbox(this.src)">
+                    <h3>Alberto Florin Petcu</h3>
+                  
+                </div>
+                <div class="team-member">
+                    <img src="img/oier.jpg" class="Miembro clickable-image" onclick="openLightbox(this.src)">
+                    <h3>Oier González</h3>
+                   
+                </div>
+            </div>
+        </section>
+
+        <!-- Vídeos -->
+        <section id="videos" class="fade-in-section">
+            <h2 class="slide-down-title">Vídeos</h2>
+            <p class="fade-in-text">
+                Mira nuestro vídeo promocional que muestra la funcionalidad de nuestros robots y nuestra participación en el concurso.
+            </p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/eZXccHuW8-k" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Resultados Obtenidos -->
+        <section id="resultados" class="fade-in-section">
+            <h2 class="slide-down-title">Resultados Obtenidos</h2>
+            <p class="fade-in-text">
+                Gracias a nuestro esfuerzo y dedicación, conseguimos:
+            </p>
+            <ul class="list-animation">
+                <li>Crear una red WIFI segura que evitó intrusiones durante el concurso.</li>
+                <li>Desarrollar robots funcionales y competitivos en sus respectivas categorías.</li>
+                <li>Producir un vídeo promocional subtitulado en inglés y una web multilingüe.</li>
+                <li>Promocionar nuestra participación en redes sociales y crear una imagen de marca sólida.</li>
+            </ul>
+        </section>
+
+        <!-- Reflexión Final -->
+        <section id="reflexion" class="fade-in-section">
+            <h2 class="slide-down-title">Reflexión Final</h2>
+            <p class="fade-in-text">
+                Este proyecto fue una experiencia enriquecedora que nos permitió aplicar nuestros conocimientos en robótica, redes, seguridad informática y competencias laborales. También aprendimos la importancia del trabajo en equipo, la comunicación efectiva y la gestión de proyectos complejos.
+            </p>
+        </section>
+
+        <!-- Formulario de contacto -->
+        <section id="contacto" class="fade-in-section">
+            <h2 class="text-border slide-down-title">Contacto</h2>
+            <div class="contact-form">
+                <form id="contactForm" onsubmit="return validateContactForm()">
+                    <div class="form-group">
+                        <label for="contactName">Nombre:</label>
+                        <input type="text" id="contactName" placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email:</label>
+                        <input type="email" id="contactEmail" placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Mensaje:</label>
+                        <textarea id="contactMessage" placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Enviar mensaje</button>
+                </form>
+            </div>
+            
+            <!-- Botones para compartir -->
+            <h3>Comparte este proyecto:</h3>
+            <div class="share-buttons">
+                <div class="share-button share-facebook" onclick="shareContent('facebook')" title="Compartir en Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="share-button share-twitter" onclick="shareContent('twitter')" title="Compartir en Twitter">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <div class="share-button share-linkedin" onclick="shareContent('linkedin')" title="Compartir en LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div class="share-button share-whatsapp" onclick="shareContent('whatsapp')" title="Compartir en WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+            </div>
+            
+            <!-- Contador de visitas -->
+            <div class="visit-counter">
+                Visitas: <span id="visitCounter">1</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="fade-in-footer">
+        <div class="footer-links">
+            <a href="#introduccion">Inicio</a>
+            <a href="#wifi-seguridad">Red WIFI</a>
+            <a href="#arduino-app">Arduino</a>
+            <a href="#servidor-web">Web</a>
+            <a href="#multimedia">Multimedia</a>
+            <a href="#contenido-ingles">Inglés</a>
+            <a href="#empleabilidad">Empleabilidad</a>
+        </div>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        
+        <p>&copy; 2025 Centro Educativo ALMI. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/additional-features.js"></script>
+    <script>
+        // Loader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.loader').style.display = 'none';
+            }, 1000);
+            
+            // Convertir imágenes en clickeables para lightbox
+            document.querySelectorAll('.section-image img, .team-member img, .project-card img').forEach(img => {
+                img.classList.add('clickable-image');
+                img.onclick = function() {
+                    openLightbox(this.src);
+                };
+            });
+            
+            // Mostrar notificación de bienvenida
+            setTimeout(function() {
+                showNotification('¡Bienvenido a la web de RobotAlmi!', 'info');
+            }, 2000);
+            
+            // Solución directa para el menú móvil en español
+            const menuToggleBtn = document.getElementById('menuToggle');
+            const navLinksMenu = document.getElementById('navLinks');
+            
+            if (menuToggleBtn && navLinksMenu) {
+                // Eliminar cualquier event listener previo
+                menuToggleBtn.removeEventListener('click', toggleMenu);
+                
+                // Añadir nuevo event listener
+                menuToggleBtn.addEventListener('click', toggleMenu);
+                
+                // Función para manejar el toggle del menú
+                function toggleMenu() {
+                    navLinksMenu.classList.toggle('active');
+                    
+                    // Cambiar icono del botón
+                    const icon = menuToggleBtn.querySelector('i');
+                    if (navLinksMenu.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+                
+                // Manejar dropdowns en móvil
+                const dropdowns = document.querySelectorAll('.dropdown');
+                dropdowns.forEach(dropdown => {
+                    const link = dropdown.querySelector('a');
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                });
+                
+                // Cerrar menú al hacer clic en un enlace
+                const menuLinks = navLinksMenu.querySelectorAll('a:not(.dropdown > a)');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            navLinksMenu.classList.remove('active');
+                            menuToggleBtn.querySelector('i').classList.remove('fa-times');
+                            menuToggleBtn.querySelector('i').classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+        });
+        
+        // Tabs
+        function openTab(tabId) {
+            // Ocultar todos los contenidos de tabs
+            var tabContents = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            // Desactivar todos los botones de tabs
+            var tabButtons = document.getElementsByClassName('tab-button');
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            // Mostrar el contenido seleccionado
+            var selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+            
+            // Activar el botón seleccionado
+            var clickedButton = event.currentTarget;
+            clickedButton.classList.add('active');
+        }
+        
+        // Botón para volver arriba
+        window.onscroll = function() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                document.getElementById('backToTop').classList.add('visible');
+            } else {
+                document.getElementById('backToTop').classList.remove('visible');
+            }
+        };
+        
+        document.getElementById('backToTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Dropdown en móvil
+        var dropdowns = document.getElementsByClassName('dropdown');
+        for (var i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    this.classList.toggle('active');
+                    e.preventDefault();
+                }
+            });
+        }
+    </script>
+</body>
+</html>

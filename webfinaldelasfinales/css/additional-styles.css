@@ -1,0 +1,506 @@
+/* Estilos adicionales para las nuevas funcionalidades */
+
+/* 1. Modo oscuro */
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --section-bg: #1e1e1e;
+    --card-bg: #2d2d2d;
+    --border-color: #444;
+    --highlight-color: #007BFF;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.dark-mode .animated-header,
+.dark-mode footer {
+    background-color: #000;
+}
+
+.dark-mode .fade-in-section,
+.dark-mode .competency-item,
+.dark-mode .team-member,
+.dark-mode .project-card,
+.dark-mode .tab-content,
+.dark-mode .code-block {
+    background-color: var(--section-bg);
+    border-color: var(--border-color);
+}
+
+.dark-mode .tab-button {
+    background-color: #333;
+    color: #ddd;
+}
+
+.dark-mode .tab-button.active {
+    background-color: var(--highlight-color);
+    color: white;
+}
+
+.dark-mode .action-button {
+    background-color: var(--highlight-color);
+    color: white;
+}
+
+/* 2. Botón de modo oscuro */
+.dark-mode-toggle {
+    display: none; /* Ocultar botón por solicitud del usuario */
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #333;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* 3. Barra de búsqueda */
+.search-container {
+    position: relative;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: var(--highlight-color, #007BFF);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+}
+
+.dark-mode .search-input {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+.dark-mode .search-results {
+    background-color: #333;
+    border-color: #555;
+}
+
+.search-results ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-results li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.search-results li:last-child {
+    border-bottom: none;
+}
+
+.search-results a {
+    color: var(--text-color, #333);
+    text-decoration: none;
+    display: block;
+}
+
+.search-results a:hover {
+    color: var(--highlight-color, #007BFF);
+}
+
+.dark-mode .search-results li {
+    border-color: #444;
+}
+
+.dark-mode .search-results a {
+    color: #ddd;
+}
+
+/* 4. Lightbox para imágenes */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* 5. Botones para compartir */
+.share-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.share-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.share-button:hover {
+    transform: scale(1.1);
+}
+
+.share-facebook {
+    background-color: #3b5998;
+}
+
+.share-twitter {
+    background-color: #1da1f2;
+}
+
+.share-linkedin {
+    background-color: #0077b5;
+}
+
+.share-whatsapp {
+    background-color: #25d366;
+}
+
+/* 6. Control de tamaño de texto */
+.font-size-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.font-size-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.font-size-button:hover {
+    background-color: #e0e0e0;
+}
+
+.dark-mode .font-size-button {
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+}
+
+.dark-mode .font-size-button:hover {
+    background-color: #444;
+}
+
+/* 7. Notificaciones */
+#notificationsContainer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notification {
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 250px;
+    max-width: 350px;
+    animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notification.info {
+    background-color: #e7f3ff;
+    border-left: 4px solid #007BFF;
+    color: #004085;
+}
+
+.notification.success {
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+    color: #155724;
+}
+
+.notification.warning {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    color: #856404;
+}
+
+.notification.error {
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3545;
+    color: #721c24;
+}
+
+.notification button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.dark-mode .notification.info {
+    background-color: #0c3b6e;
+    color: #b8daff;
+}
+
+.dark-mode .notification.success {
+    background-color: #0f401c;
+    color: #a3d9b1;
+}
+
+.dark-mode .notification.warning {
+    background-color: #533f03;
+    color: #ffe69c;
+}
+
+.dark-mode .notification.error {
+    background-color: #4c1319;
+    color: #f5c6cb;
+}
+
+/* 8. Contador de visitas */
+.visit-counter {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.dark-mode .visit-counter {
+    background-color: #333;
+}
+
+/* 9. Formulario de contacto */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-submit {
+    background-color: var(--highlight-color, #007BFF);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-submit:hover {
+    background-color: #0056b3;
+}
+
+.dark-mode .contact-form {
+    background-color: #2d2d2d;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+}
+
+/* 10. Animaciones al scroll */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.scroll-animate.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 11. Botones de accesibilidad */
+.accessibility-toolbar {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.accessibility-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.accessibility-button:hover {
+    transform: scale(1.1);
+}
+
+.dark-mode .accessibility-button {
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+}
+
+/* 12. Estilos para imágenes clickeables */
+.clickable-image {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clickable-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 13. Botón de idioma activo */
+.language-btn.active {
+    background-color: var(--highlight-color, #007BFF);
+    color: white;
+}
+
+/* 14. Mejoras para dispositivos móviles */
+@media (max-width: 768px) {
+    .accessibility-toolbar {
+        flex-direction: row;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .dark-mode-toggle {
+        bottom: 20px;
+    }
+    
+    .search-container {
+        max-width: 100%;
+    }
+    
+    .contact-form {
+        padding: 15px;
+    }
+    
+    .notification {
+        min-width: auto;
+        max-width: 90%;
+    }
+}

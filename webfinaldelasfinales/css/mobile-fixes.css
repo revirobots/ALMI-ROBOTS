@@ -1,0 +1,323 @@
+/* Mejoras adicionales para dispositivos móviles */
+
+/* Ajustes generales para móviles */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Tamaño base de fuente más pequeño para móviles */
+  }
+  
+  /* Ajuste de títulos para móviles */
+  .text-border {
+    font-size: 1.5rem; /* Reducir tamaño de títulos con borde */
+    -webkit-text-stroke: 1px #ff4c4c; /* Borde más delgado */
+    letter-spacing: 1px; /* Menos espaciado entre letras */
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+  }
+  
+  /* Mejorar espaciado en secciones */
+  .fade-in-section {
+    padding: 1.5rem 0.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Ajustar tamaño de imágenes */
+  .arana, .OTTO, .wifi, .foto {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  /* Desactivar efectos de hover que causan problemas en móviles */
+  .arana:hover, .OTTO:hover, .wifi:hover, .foto:hover,
+  .team-member:hover, .competency-item:hover {
+    transform: none;
+  }
+  
+  /* Ajustar tabs para móviles */
+  .tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .tab-button {
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 8px;
+  }
+  
+  /* Ajustar grids para móviles */
+  .competencies-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  /* Ajustar formulario de contacto */
+  .contact-form {
+    padding: 15px 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  /* Ajustar botones de compartir */
+  .share-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Ocultar navegación original en móviles */
+  .nav-container {
+    display: none;
+  }
+  
+  /* Mostrar navegación móvil simplificada */
+  .mobile-nav-container {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .mobile-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 10px;
+  }
+  
+  .mobile-nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    background-color: rgba(0, 123, 255, 0.7);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mobile-nav-links a:hover, 
+  .mobile-nav-links a:active {
+    background-color: rgba(0, 123, 255, 1);
+  }
+  
+  .mobile-language-selector {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .mobile-language-selector .language-btn {
+    padding: 5px 10px;
+    min-width: 40px;
+  }
+}
+
+/* Ajustes específicos para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  /* Reposicionar elementos flotantes */
+  .dark-mode-toggle {
+    bottom: 70px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .accessibility-toolbar {
+    flex-direction: row;
+    left: 10px;
+    bottom: 10px;
+    transform: none;
+  }
+  
+  .accessibility-button {
+    width: 35px;
+    height: 35px;
+  }
+  
+  /* Ajustar barra de búsqueda */
+  .search-container {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin: 10px auto;
+    max-width: 90%;
+  }
+  
+  /* Ajustar notificaciones */
+  #notificationsContainer {
+    top: 10px;
+    right: 10px;
+    max-width: 90%;
+  }
+  
+  .notification {
+    padding: 10px;
+    min-width: auto;
+    max-width: 100%;
+    font-size: 14px;
+  }
+  
+  /* Ajustar lightbox */
+  .lightbox img {
+    max-width: 95%;
+    max-height: 80%;
+  }
+  
+  /* Ajustar código y bloques preformateados */
+  .code-block {
+    padding: 8px;
+    overflow-x: auto;
+  }
+  
+  code {
+    font-size: 12px;
+  }
+  
+  /* Ajustar footer */
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  /* Ajustar header para pantallas muy pequeñas */
+  .animated-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .logo-animation {
+    max-width: 80px;
+  }
+  
+  /* Ajustar navegación móvil para pantallas muy pequeñas */
+  .mobile-nav-links {
+    gap: 3px;
+  }
+  
+  .mobile-nav-links a {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+    flex: 1 1 calc(33% - 6px);
+  }
+}
+
+/* Ajustes para orientación horizontal en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+  .accessibility-toolbar {
+    flex-direction: row;
+    left: 10px;
+    bottom: 10px;
+  }
+  
+  .dark-mode-toggle {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  /* Ajustar navegación móvil para orientación horizontal */
+  .mobile-nav-links {
+    flex-wrap: wrap;
+  }
+  
+  .mobile-nav-links a {
+    flex: 1 1 calc(25% - 10px);
+    font-size: 0.8rem;
+  }
+}
+
+/* Ocultar navegación móvil en pantallas grandes */
+@media (min-width: 769px) {
+  .mobile-nav-container {
+    display: none;
+  }
+}
+
+/* Mejoras para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tabs {
+    flex-wrap: wrap;
+  }
+  
+  .tab-button {
+    flex: 1 1 auto;
+    min-width: 120px;
+  }
+  
+  .competencies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ajustes para el menú de navegación en tablets */
+@media (min-width: 769px) and (max-width: 992px) {
+  .nav-links {
+    gap: 0.3rem;
+  }
+  
+  .nav-links li a {
+    font-size: 0.8rem;
+    padding: 0.3rem;
+  }
+}
+
+/* Corrección para elementos superpuestos */
+.search-container {
+  z-index: 900;
+}
+
+.dark-mode-toggle, .accessibility-toolbar {
+  z-index: 901;
+}
+
+#notificationsContainer {
+  z-index: 902;
+}
+
+.lightbox {
+  z-index: 1000;
+}
+
+/* Mejoras de accesibilidad para dispositivos táctiles */
+@media (hover: none) {
+  /* Aumentar tamaño de elementos táctiles */
+  .nav-links li a,
+  .dropdown-content a,
+  .tab-button,
+  .action-button,
+  .form-submit,
+  .language-btn {
+    padding: 12px;
+    min-height: 44px; /* Tamaño mínimo recomendado para elementos táctiles */
+  }
+  
+  /* Eliminar efectos hover que pueden causar confusión en dispositivos táctiles */
+  a:hover, button:hover, .competency-item:hover, .team-member:hover {
+    transform: none;
+  }
+}
